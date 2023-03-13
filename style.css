@@ -34,11 +34,13 @@ body {
   height: 24px;
 }
 
-.navbar .bar {
+.bar1,
+.bar2,
+.bar3 {
   background-color: black;
   height: 4px;
   width: 36px;
-  margin: 10px;
+  margin: 3px;
   border-radius: 10px;
 }
 .navbar .hamburger {
@@ -57,6 +59,38 @@ body {
     'foam foam dimensional';
 
   width: 100%;
+}
+
+.mobileNav {
+  width: 80px;
+  background-color: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  right: -160px;
+  z-index: 2;
+  padding: 16px;
+  transition: transform 0.5s;
+}
+.mobileNav a {
+  text-decoration: none;
+  margin: 16px 0;
+  color: black;
+}
+.mobileNav a:hover {
+  text-decoration: underline;
+}
+.mobileNav img {
+  width: 24px;
+  height: 24px;
+}
+
+.openDrawer {
+  transform: translateX(-160px);
 }
 
 #eth {
@@ -198,5 +232,44 @@ footer {
   }
   .project .overlay {
     font-size: 20px;
+  }
+}
+.animateBar1 {
+  animation: flipBar1 1s;
+  animation-fill-mode: forwards;
+}
+.animateBar2 {
+  animation: fadeBar2 1s;
+  animation-fill-mode: forwards;
+}
+.animateBar3 {
+  animation: flipBar3 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes flipBar1 {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(45deg) translate(4px, 10px);
+  }
+}
+@keyframes fadeBar2 {
+  from {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+  to {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+}
+@keyframes flipBar3 {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(-45deg) translate(4px, -10px);
   }
 }
